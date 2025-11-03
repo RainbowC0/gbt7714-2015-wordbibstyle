@@ -12,23 +12,10 @@ MS Word 可用的 GB/T 7714-2015 书目样式
 
 # 样式效果
 
-<p>
-<style>
-  ol.bib {
-    conter-reset: li;
-  }
-  ol.bib > li {
-    counter-increment: li;
-  }
-  ol.bib > li::marker {
-    content: "[" counter(li) "] ";
-  }
-</style>
-<ol class="bib">
-  <li>Alqudsi Y., Makaraci M.. UAV swarms: research, challenges, and future directions[J]. Journal of Engineering and Applied Science, 2025, 72(1): 12.</li>
-  <li>高佳宁, 刘云平, 王富尧, 程勇, 等. 基于深度强化学习的无人机集群队形保持方法[J]. 兵器装备工程学报, 2025, 46(06): 268-277</li>
-</ol>
-</p>
+```
+[1] Alqudsi Y., Makaraci M.. UAV swarms: research, challenges, and future directions[J]. Journal of Engineering and Applied Science, 2025, 72(1): 12.
+[2] 高佳宁, 刘云平, 王富尧, 程勇, 等. 基于深度强化学习的无人机集群队形保持方法[J]. 兵器装备工程学报, 2025, 46(06): 268-277
+```
 
 # 参考
 
