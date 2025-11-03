@@ -12,6 +12,7 @@ MS Word 可用的 GB/T 7714-2015 书目样式
 
 # 样式效果
 
+<p>
 <style>
   ol.bib {
     conter-reset: li;
@@ -27,6 +28,7 @@ MS Word 可用的 GB/T 7714-2015 书目样式
   <li>Alqudsi Y., Makaraci M.. UAV swarms: research, challenges, and future directions[J]. Journal of Engineering and Applied Science, 2025, 72(1): 12.</li>
   <li>高佳宁, 刘云平, 王富尧, 程勇, 等. 基于深度强化学习的无人机集群队形保持方法[J]. 兵器装备工程学报, 2025, 46(06): 268-277</li>
 </ol>
+</p>
 
 # 参考
 
