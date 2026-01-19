@@ -70,10 +70,11 @@
     <!-- 通用作者格式（姓氏大写） -->
     <xsl:template name="format-author">
         <xsl:param name="authors"/>
+        <xsl:param name="lcid" select="2052"/>
         <xsl:text>[</xsl:text>
         <xsl:value-of select="b:RefOrder"/>
         <xsl:text>]</xsl:text><span style="mso-tab-count:1"> </span>
-        <xsl:for-each select="$authors/b:Author/b:NameList/b:Person">
+        <xsl:for-each select="$authors/b:Author/b:NameList/b:Person[position()&lt;4]">
             <xsl:if test="position() > 1">
                 <xsl:text>, </xsl:text>
             </xsl:if>
@@ -81,11 +82,17 @@
             <xsl:if test="b:First">
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="substring(b:First, 1, 1)"/>
-                <xsl:text>.</xsl:text>
             </xsl:if>
         </xsl:for-each>
         <xsl:if test="count($authors/b:Author/b:NameList/b:Person) > 3">
-            <xsl:text>, 等</xsl:text>
+            <xsl:choose>
+                <xsl:when test="$lcid = '1033'">
+                <xsl:text>, et al</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                <xsl:text>,等</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:if>
     </xsl:template>
 
@@ -111,6 +118,7 @@
         <p class="MsoBib">
             <xsl:call-template name="format-author">
                 <xsl:with-param name="authors" select="b:Author"/>
+                <xsl:with-param name="lcid" select="b:LCID"/>
             </xsl:call-template>
             <xsl:text>. </xsl:text>
             
@@ -146,6 +154,7 @@
         <p class="MsoBib">
             <xsl:call-template name="format-author">
                 <xsl:with-param name="authors" select="b:Author"/>
+                <xsl:with-param name="lcid" select="b:LCID"/>
             </xsl:call-template>
             <xsl:text>. </xsl:text>
             
@@ -178,6 +187,7 @@
         <p class="MsoBib">
             <xsl:call-template name="format-author">
                 <xsl:with-param name="authors" select="b:Author"/>
+                <xsl:with-param name="lcid" select="b:LCID"/>
             </xsl:call-template>
             <xsl:text>. </xsl:text>
             
@@ -215,6 +225,7 @@
         <p class="MsoBib">
             <xsl:call-template name="format-author">
                 <xsl:with-param name="authors" select="b:Author"/>
+                <xsl:with-param name="lcid" select="b:LCID"/>
             </xsl:call-template>
             <xsl:text>. </xsl:text>
             
@@ -240,6 +251,7 @@
             <xsl:if test="b:Author">
                 <xsl:call-template name="format-author">
                     <xsl:with-param name="authors" select="b:Author"/>
+                    <xsl:with-param name="lcid" select="b:LCID"/>
                 </xsl:call-template>
                 <xsl:text>. </xsl:text>
             </xsl:if>
@@ -287,6 +299,7 @@
         <p class="MsoBib">
             <xsl:call-template name="format-author">
                 <xsl:with-param name="authors" select="b:Author"/>
+                <xsl:with-param name="lcid" select="b:LCID"/>
             </xsl:call-template>
             <xsl:text>. </xsl:text>
             
